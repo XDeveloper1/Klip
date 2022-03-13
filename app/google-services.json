@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "977092369695",
+    "project_id": "klip-b2755",
+    "storage_bucket": "klip-b2755.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977092369695:android:df6b69abce08faea1a642a",
+        "android_client_info": {
+          "package_name": "com.idiots.klip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977092369695-m01umj1q4uq2377u612t9jclvrc66a88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrexDGo5xwGzc_nN557rnD_H-H_IrZ-nM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977092369695-m01umj1q4uq2377u612t9jclvrc66a88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
