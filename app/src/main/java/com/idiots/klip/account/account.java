@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import com.idiots.klip.klip.klip;
 
 public class account extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
-    Button im1,im2;
+    ImageButton im1, im2;
     TextView username;
     TextView followers;
     TextView following;
@@ -38,89 +39,89 @@ public class account extends AppCompatActivity {
     TextView bio;
     Button editprofile;
     FirebaseDatabase db;
-    String number,id,biodata ,gender,dob,photo,usernames,followerss,followings,likess,phonenumber,email;
+    String number, id, biodata, gender, dob, photo, usernames, followerss, followings, likess, phonenumber, email;
     String cuser;
-    FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        bottomNavigation=findViewById(R.id.bottom_navigation);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setSelectedItemId(R.id.account);
-        bio=findViewById(R.id.bio);
-        followers=findViewById(R.id.followers);
-        following=findViewById(R.id.following);
-        im1=findViewById(R.id.like_button);
-        im2=findViewById(R.id.dashboard_button);
-        likes=findViewById(R.id.likes);
-        editprofile=findViewById(R.id.edit_button);
-         db= FirebaseDatabase.getInstance();
-          username=findViewById(R.id.id);
-          cuser =user.getPhoneNumber();
-          reference=FirebaseDatabase.getInstance().getReference("users");
-          reference.child(cuser).addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-               followerss=dataSnapshot.child("followers").getValue(String.class);
-               followings=dataSnapshot.child("following").getValue(String.class);
-               likess=dataSnapshot.child("likes").getValue(String.class);
-               usernames=dataSnapshot.child("username").getValue(String.class);
-            biodata = dataSnapshot.child("bio").getValue(String.class);
+        bio = findViewById(R.id.bio);
+        followers = findViewById(R.id.followers);
+        following = findViewById(R.id.following);
+        im1 = findViewById(R.id.dashboard_likes);
+        im2 = findViewById(R.id.dashboard_button_dash);
+        likes = findViewById(R.id.likes);
+        editprofile = findViewById(R.id.edit_button);
+        db = FirebaseDatabase.getInstance();
+        username = findViewById(R.id.id);
+        cuser = user.getPhoneNumber();
+        reference = FirebaseDatabase.getInstance().getReference("users");
+        reference.child(cuser).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                followerss = dataSnapshot.child("followers").getValue(String.class);
+                followings = dataSnapshot.child("following").getValue(String.class);
+                likess = dataSnapshot.child("likes").getValue(String.class);
+                usernames = dataSnapshot.child("username").getValue(String.class);
+                biodata = dataSnapshot.child("bio").getValue(String.class);
 
-            bio.setText(biodata);
-            username.setText(usernames);
-            followers.setText(followerss);
-            following.setText(followings);
-            likes.setText(likess);
+                bio.setText(biodata);
+                username.setText(usernames);
+                followers.setText(followerss);
+                following.setText(followings);
+                likes.setText(likess);
 
-           }
+            }
 
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
-               Toast.makeText(account.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(account.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 
-           }
-       });
-       im1.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+            }
+        });
+        im1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-               com.idiots.klip.account.likes likes =new likes();
-               loadlikefragment(likes);
-           }
-       });
-       im2.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               com.idiots.klip.account.dashboard dashboard =new com.idiots.klip.account.dashboard();
-               loaddashfragments(dashboard);
+                com.idiots.klip.account.likes likes = new likes();
+                loadlikefragment(likes);
+            }
+        });
+        im2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                com.idiots.klip.account.dashboard dashboard = new com.idiots.klip.account.dashboard();
+                loaddashfragments(dashboard);
 
-           }
-       });
+            }
+        });
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
-                     startActivity(new Intent(getApplicationContext(), dashboard.class));
-                     overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), dashboard.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.discover:
                         startActivity(new Intent(getApplicationContext(), discover.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.Klip:
                         startActivity(new Intent(getApplicationContext(), klip.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.inbox:
                         startActivity(new Intent(getApplicationContext(), inbox.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.account:
                         return true;
@@ -134,7 +135,7 @@ public class account extends AppCompatActivity {
         editprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(getApplicationContext(),Editprofile.class);
+                Intent intent = new Intent(getApplicationContext(), Editprofile.class);
                 startActivity(intent);
 
             }
@@ -144,9 +145,9 @@ public class account extends AppCompatActivity {
     }
 
     private void loadlikefragment(com.idiots.klip.account.likes likes) {
-        FragmentManager fragmentManager =getSupportFragmentManager();
-        FragmentTransaction transaction =fragmentManager.beginTransaction();
-        transaction.replace(R.id.frag_container,likes);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frag_container, likes);
 //        transaction.remove(likes);
         transaction.commit();
         Toast.makeText(this, "likes start", Toast.LENGTH_SHORT).show();
@@ -154,9 +155,9 @@ public class account extends AppCompatActivity {
     }
 
     private void loaddashfragments(com.idiots.klip.account.dashboard dashboard) {
-        FragmentManager fragmentManager =getSupportFragmentManager();
-        FragmentTransaction transaction =fragmentManager.beginTransaction();
-        transaction.replace(R.id.frag_container,dashboard);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frag_container, dashboard);
 //        transaction.remove(dashboard);
         transaction.commit();
         Toast.makeText(this, "dash started", Toast.LENGTH_SHORT).show();

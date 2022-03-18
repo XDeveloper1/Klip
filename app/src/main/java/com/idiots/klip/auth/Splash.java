@@ -12,7 +12,7 @@ import com.idiots.klip.R;
 
 public class Splash extends AppCompatActivity {
 
-    private static  int SPLASH_TIME_OUT=1000;
+    private static int SPLASH_TIME_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +22,20 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferences =getSharedPreferences(MainActivity.PREFS_NAME,0);
-                boolean hasloggedIn= sharedPreferences.getBoolean("hasloggedIN",false);
-                if(hasloggedIn){
+                SharedPreferences sharedPreferences = getSharedPreferences(MainActivity.PREFS_NAME, 0);
+                boolean hasloggedIn = sharedPreferences.getBoolean("hasloggedIN", false);
+                if (hasloggedIn) {
                     Intent intent = new Intent(Splash.this, com.idiots.klip.home.dashboard.class);
                     startActivity(intent);
                     finish();
-                }else{
-                    Intent intent =new Intent(Splash.this,MainActivity.class);
+                } else {
+                    Intent intent = new Intent(Splash.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
 
             }
-        },SPLASH_TIME_OUT);
+        }, SPLASH_TIME_OUT);
 
     }
 }

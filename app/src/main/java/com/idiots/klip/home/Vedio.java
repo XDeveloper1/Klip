@@ -2,24 +2,18 @@ package com.idiots.klip.home;
 
 
 public class Vedio {
-  String vediourl;
-    String  desc;
     String title;
+    String desc;
+    String url;
 
-    public String getVediourl() {
-        return vediourl;
+    Vedio() {
+
     }
 
-    public void setVediourl(String vediourl) {
-        this.vediourl = vediourl;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
+    public Vedio(String title, String desc, String url) {
+        this.title = title;
         this.desc = desc;
+        this.url = url;
     }
 
     public String getTitle() {
@@ -30,13 +24,19 @@ public class Vedio {
         this.title = title;
     }
 
-    public Vedio() {
-        this.vediourl = vediourl;
-        this.desc = desc;
-        this.title = title;
+    public String getDesc() {
+        return desc;
     }
 
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
+    public String getUrl() {
+        return url;
+    }
 
-
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

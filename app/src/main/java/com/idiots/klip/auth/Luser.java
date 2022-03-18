@@ -1,8 +1,7 @@
 package com.idiots.klip.auth;
 
 public class Luser {
-    String number,id,bio,gender,dob,photo,username,followers,following,likes,email;
-
+    String number, id, bio, gender, dob, photo, username, followers, following, likes, email;
 
 
     public String getNumber() {

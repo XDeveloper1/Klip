@@ -1,7 +1,7 @@
 package com.idiots.klip.account;
 
 public class Udata {
-    String username,id,bio,number,gender;
+    String username, id, bio, number, gender;
 
     public String getUsername() {
         return username;

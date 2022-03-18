@@ -4,109 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".account.Editprofile">
+    tools:context=".account.Editprofile"
+    android:background="@color/black">
 
-
-  <ImageView
+  <de.hdodenhof.circleimageview.CircleImageView
       android:id="@+id/imageView4"
       android:layout_width="155dp"
       android:layout_height="148dp"
+      android:background="@drawable/round_img"
+      android:src="@drawable/washid"
+      android:textAlignment="center"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.09"
-      app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+      app:layout_constraintVertical_bias="0.077" />
 
   <EditText
       android:id="@+id/usernam"
-      android:layout_width="336dp"
-      android:layout_height="47dp"
+      android:layout_width="350dp"
+      android:layout_height="60dp"
       android:autofillHints=""
+      android:background="@drawable/round_main"
       android:ems="10"
       android:inputType="textPersonName"
-      android:text="Name"
+      android:text=" Name"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.606"
+      app:layout_constraintHorizontal_bias="0.508"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.328" />
+      app:layout_constraintVertical_bias="0.315" />
 
   <EditText
       android:id="@+id/useridss"
-      android:layout_width="336dp"
-      android:layout_height="47dp"
+      android:layout_width="350dp"
+      android:layout_height="60dp"
       android:autofillHints=""
+      android:saveEnabled="false"
+      android:background="@drawable/round_main"
       android:ems="10"
       android:inputType="number"
+      android:textAlignment="center"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.638"
+      app:layout_constraintHorizontal_bias="0.508"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.435" />
+      app:layout_constraintVertical_bias="0.424" />
 
   <EditText
       android:id="@+id/bios"
-      android:layout_width="333dp"
-      android:layout_height="102dp"
+      android:layout_width="354dp"
+      android:layout_height="75dp"
       android:autofillHints=""
+      android:background="@drawable/round_main"
       android:ems="10"
+      android:hint=" Enter Your Bio Here"
       android:inputType="textPersonName"
-      android:text="Name"
+      android:textColorHint="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.615"
+      app:layout_constraintHorizontal_bias="0.516"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.577" />
+      app:layout_constraintVertical_bias="0.555" />
 
   <Spinner
       android:id="@+id/gender"
-      android:layout_width="336dp"
-      android:layout_height="55dp"
+      android:layout_width="350dp"
+      android:layout_height="60dp"
+      android:backgroundTint="@color/white"
+      android:outlineAmbientShadowColor="@color/white"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.64"
+      app:layout_constraintHorizontal_bias="0.508"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.715" />
+      app:layout_constraintVertical_bias="0.684" />
 
   <EditText
       android:id="@+id/dob"
-      android:layout_width="336dp"
-      android:layout_height="53dp"
+      android:layout_width="350dp"
+      android:layout_height="60dp"
       android:autofillHints=""
+      android:background="@drawable/round_main"
       android:ems="10"
       android:inputType="date"
+      android:text=" Select Your DOB"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.613"
+      app:layout_constraintHorizontal_bias="0.508"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.818" />
+      app:layout_constraintVertical_bias="0.795" />
 
   <EditText
       android:id="@+id/phnnumber"
-      android:layout_width="336dp"
-      android:layout_height="55dp"
+      android:layout_width="350dp"
+      android:layout_height="60dp"
       android:autofillHints=""
+      android:background="@drawable/round_main"
       android:ems="10"
       android:inputType="phone"
+      android:text=" Enter Your Phone Number"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.613"
+      app:layout_constraintHorizontal_bias="0.508"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.924" />
+      app:layout_constraintVertical_bias="0.907" />
 
   <Button
       android:id="@+id/save"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Save"
+      android:background="@drawable/round_btn"
+      android:textColor="#FFFFFF"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.949"

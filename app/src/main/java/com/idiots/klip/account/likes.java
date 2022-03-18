@@ -17,9 +17,9 @@ public class likes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-    View view =  inflater.inflate(R.layout.fragment_likes, container, false);
+        View view = inflater.inflate(R.layout.fragment_likes, container, false);
 
-    return view;
+        return view;
 
     }
 }

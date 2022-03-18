@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,42 +36,40 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     EditText phone1, otps;
     Button button1;
-    String number,id,bio,gender,dob,photo,username,followers,following,likes,phonenumber,email,imageurl;
+    String number, id, bio, gender, dob, photo, username, followers, following, likes, phonenumber, email, imageurl;
     String otpid;
     String Snapshot;
-    TextView optsdf;
     FirebaseAuth mAuth;
     FirebaseDatabase db;
     DatabaseReference reference;
-    public static  String PREFS_NAME="myprefsfile";
+    public static String PREFS_NAME = "myprefsfile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        phone=findViewById(R.id.phone);
-        button=findViewById(R.id.otpsend);
-        ccp=(CountryCodePicker)findViewById(R.id.ccp) ;
+        phone = findViewById(R.id.phone);
+        button = findViewById(R.id.otpsend);
+        ccp = (CountryCodePicker) findViewById(R.id.ccp);
         ccp.registerCarrierNumberEditText(phone);
-        optsdf=findViewById(R.id.otpsdf);
         phone = findViewById(R.id.phone);
         button1 = findViewById(R.id.button1);
         otps = findViewById(R.id.otp);
         mAuth = FirebaseAuth.getInstance();
-        db= FirebaseDatabase.getInstance();
-        reference= db.getReference("users");
+        db = FirebaseDatabase.getInstance();
+        reference = db.getReference("users");
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-        public void onClick(View view) {
-                  if( !ccp.getFullNumberWithPlus().isEmpty()){
-                   number= ccp.getFullNumberWithPlus();
+            public void onClick(View view) {
+                if (!ccp.getFullNumberWithPlus().isEmpty()) {
+                    number = ccp.getFullNumberWithPlus();
                     initiateotp();
 
-                  }else{
-                      phone.setError("please enter the number");
-                  }
+                } else {
+                    phone.setError("please enter the number");
+                }
 
 
             }
@@ -94,31 +91,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void initiateotp() {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 number,        // Phone number to verify
                 10,                 // Timeout duration
                 TimeUnit.SECONDS,   // Unit of timeout
                 this,               // Activity (for callback binding)
-                new PhoneAuthProvider.OnVerificationStateChangedCallbacks()
-                {
+                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                     @Override
-                    public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken)
-                    {
-                        otpid=s;
-                        optsdf.setText(s);
+                    public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                        otpid = s;
+
                     }
 
                     @Override
-                    public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential)
-                    {
+                    public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
                         signInWithPhoneAuthCredential(phoneAuthCredential);
                     }
 
                     @Override
                     public void onVerificationFailed(FirebaseException e) {
-                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });        // OnVerificationStateChangedCallbacks
 
@@ -129,21 +122,20 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful())
-                        {
-                                    insertdata();
+                        if (task.isSuccessful()) {
+                            insertdata();
                             Toast.makeText(MainActivity.this, "going", Toast.LENGTH_SHORT).show();
 
-                           SharedPreferences sharedPreferences =getSharedPreferences(MainActivity.PREFS_NAME,0);
-                          SharedPreferences.Editor editor =sharedPreferences.edit();
-                          editor.putBoolean("hasloggedIN",true);
-                          editor.commit();
-                          insertdata();
-                          startActivity(new Intent(getApplicationContext(), dashboard.class));
+                            SharedPreferences sharedPreferences = getSharedPreferences(MainActivity.PREFS_NAME, 0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("hasloggedIN", true);
+                            editor.commit();
+                            insertdata();
+                            startActivity(new Intent(getApplicationContext(), dashboard.class));
 
 
                         } else {
-                            Toast.makeText(getApplicationContext(),"Signin Code Error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Signin Code Error", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -156,38 +148,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-              if(dataSnapshot.exists()){
-                  for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
-                      Snapshot =dataSnapshot1.getValue(String.class);
-                      if(Snapshot.equals(number)){
-                          Toast.makeText(MainActivity.this, "prsent", Toast.LENGTH_SHORT).show();
-                          Log.d(Snapshot, "onDataChange: ");
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        Snapshot = dataSnapshot1.getValue(String.class);
+                        if (Snapshot.equals(number)) {
+                            Toast.makeText(MainActivity.this, "prsent", Toast.LENGTH_SHORT).show();
+                            Log.d(Snapshot, "onDataChange: ");
 
-                          break;
-                      }
+                            break;
+                        }
 
-                  }
+                    }
 
-              }else{
-                  id ="";
-                  bio ="";
-                  gender="";
-                  dob="";
-                  photo="";
-                  username=number+"klip";
-                  followers="0";
-                  following="0";
-                  likes="0";
-                  email="";
+                } else {
+                    id = "";
+                    bio = "";
+                    gender = "";
+                    dob = "";
+                    photo = "";
+                    username = number + "klip";
+                    followers = "0";
+                    following = "0";
+                    likes = "0";
+                    email = "";
 
 
+                    Luser luser = new Luser(number, id, bio, gender, dob, photo, username, followers, following, likes, email);
+                    if (reference.child(number).setValue(luser).isSuccessful()) {
+                        Toast.makeText(MainActivity.this, "sucess", Toast.LENGTH_SHORT).show();
+                    }
 
-                  Luser luser = new Luser(number,id,bio,gender,dob,photo,username,followers,following,likes,email);
-                  if (reference.child(number).setValue(luser).isSuccessful()){
-                  Toast.makeText(MainActivity.this, "sucess", Toast.LENGTH_SHORT).show();
-          }
-
-              }
+                }
 
 
             }

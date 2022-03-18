@@ -1,11 +1,11 @@
 package com.idiots.klip.discover;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -22,17 +22,17 @@ public class discover extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover);
-        bottomNavigation=findViewById(R.id.bottom_navigation);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setSelectedItemId(R.id.discover);
 
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
-                     startActivity(new Intent(getApplicationContext(), dashboard.class));
-                     overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), dashboard.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.discover:
@@ -42,15 +42,15 @@ public class discover extends AppCompatActivity {
 
                     case R.id.Klip:
                         startActivity(new Intent(getApplicationContext(), klip.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.inbox:
                         startActivity(new Intent(getApplicationContext(), inbox.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.account:
                         startActivity(new Intent(getApplicationContext(), account.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
 
