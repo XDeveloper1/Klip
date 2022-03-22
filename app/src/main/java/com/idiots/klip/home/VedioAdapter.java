@@ -64,15 +64,15 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
     public void setVideoData(Vedio vedio) {
         title.setText(vedio.getTitle());
         desc.setText(vedio.getDesc());
-           videoView.setVideoPath(vedio.getUrl());
+        videoView.setVideoPath(vedio.getUrl());
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
+            public void onPrepared(MediaPlayer mp) {
                 pbar.setVisibility(View.GONE);
-                mediaPlayer.start();
-                float videoRatio = mediaPlayer.getVideoWidth() / (float) mediaPlayer.getVideoHeight();
-                float screenRatio = videoView.getWidth() / (float) videoView.getHeight();
+                mp.start();
+                float videoRatio = mp.getVideoWidth() / (float) mp.getVideoHeight();
+                float screenRatio = videoView.getWidth()/ (float) videoView.getHeight();
                 float scale = videoRatio / screenRatio;
 
                 if (scale >= 1f) {
@@ -80,6 +80,18 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
                 } else {
                     videoView.setScaleY(1f / scale);
                 }
+            }
+        });
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        mp.start();
+
+                    }
+                });
             }
         });
         fav.setOnClickListener(new View.OnClickListener() {
