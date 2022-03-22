@@ -19,24 +19,24 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginStart="165dp"
                     android:layout_marginTop="85dp"
                     android:text="userid"
                     android:textColor="#FFFFFF"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageButton"
                     android:layout_width="128dp"
                     android:layout_height="129dp"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"
                     android:layout_marginTop="-35dp"
                     android:background="@drawable/round_img"
                     android:padding="1dp"
@@ -46,7 +46,7 @@
                     android:id="@+id/followers"
                     android:layout_width="61dp"
                     android:layout_height="65dp"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginStart="165dp"
                     android:layout_marginTop="-90dp"
                     android:text="0"
                     android:textAlignment="center"
@@ -55,7 +55,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="165dp"
+                    android:layout_marginStart="165dp"
                     android:layout_marginTop="3dp"
                     android:text="followers"
                     android:textColor="#FDFDFD" />
@@ -64,7 +64,7 @@
                     android:id="@+id/following"
                     android:layout_width="61dp"
                     android:layout_height="65dp"
-                    android:layout_marginLeft="230dp"
+                    android:layout_marginStart="230dp"
                     android:layout_marginTop="-90dp"
                     android:text="0"
                     android:textAlignment="center"
@@ -73,7 +73,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="235dp"
+                    android:layout_marginStart="235dp"
                     android:layout_marginTop="4dp"
                     android:text="following"
                     android:textColor="#FFFFFF" />
@@ -83,7 +83,7 @@
                     android:id="@+id/likes"
                     android:layout_width="61dp"
                     android:layout_height="65dp"
-                    android:layout_marginLeft="298dp"
+                    android:layout_marginStart="298dp"
                     android:layout_marginTop="-89dp"
                     android:text="0"
                     android:textAlignment="center"
@@ -92,8 +92,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="310dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="5dp"
                     android:text="likes"
                     android:textColor="#F8F8F8" />
 
@@ -101,7 +101,7 @@
                     android:id="@+id/bio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginStart="50dp"
                     android:layout_marginTop="20dp"
                     android:text="Edit bio"
                     android:textColor="#FFFFFF" />
@@ -111,9 +111,9 @@
                     android:id="@+id/insta_button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="290dp"
+                    android:layout_marginStart="290dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="13dp"
+                    android:layout_marginEnd="13dp"
                     android:background="@drawable/round_btn"
                     android:src="@drawable/icon_insta" />
 
@@ -121,9 +121,9 @@
                     android:id="@+id/edit_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="-50dp"
-                    android:layout_marginRight="130dp"
+                    android:layout_marginEnd="130dp"
                     android:background="@drawable/round_btn"
                     android:text="Edit profile"
                     android:textColor="#FFFFFF" />
@@ -131,9 +131,9 @@
 
                 <ImageButton
                     android:id="@+id/dashboard_likes"
-                    android:layout_width="190dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="210dp"
+                    android:layout_marginStart="210dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/round_btn"
                     android:src="@drawable/icon_like"
@@ -143,7 +143,7 @@
                     android:id="@+id/dashboard_button_dash"
                     android:layout_width="190dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="-50dp"
                     android:background="@drawable/round_btn"
                     android:src="@drawable/icon_dashboard"
