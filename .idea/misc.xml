@@ -18,21 +18,24 @@
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.183" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/drawable/ic_plus_24.xml" value="0.23" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_account.xml" value="0.1" />
-        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_dashboard.xml" value="0.176" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_dashboard.xml" value="0.152" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_discover.xml" value="0.1" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_editprofile.xml" value="0.264" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_inbox.xml" value="0.2" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_klip.xml" value="0.2" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_optsend.xml" value="0.15942028985507245" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/activity_splash.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/custom_controller.xml" value="0.264" />
-        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/each_vedio.xml" value="0.264" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/each_vedio.xml" value="0.1" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/exo_custom.xml" value="0.13179347826086957" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/followings_fv.xml" value="0.2" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_dash.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_following.xml" value="0.21105072463768115" />
+        <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_for_you.xml" value="0.17346014492753623" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_home.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_lik.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/ankit/AndroidStudioProjects/Klip/app/src/main/res/layout/fragment_likes.xml" value="0.21927083333333333" />

@@ -1,8 +1,12 @@
 package com.idiots.klip.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Handler;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -17,7 +21,7 @@ import com.idiots.klip.R;
 
 import java.util.List;
 
-public class VedioAdapter extends RecyclerView.Adapter<VedioAdapterViewholder>{
+public class VedioAdapter extends RecyclerView.Adapter<VedioAdapterViewholder> {
 
     private Context context;
     private List<Vedio> vedioList;
@@ -27,11 +31,12 @@ public class VedioAdapter extends RecyclerView.Adapter<VedioAdapterViewholder>{
         this.vedioList = vedioList;
     }
 
+
     @NonNull
     @Override
     public VedioAdapterViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v   = LayoutInflater.from(context).inflate(R.layout.each_vedio,parent,false);
-        return  new VedioAdapterViewholder(v);
+        View v = LayoutInflater.from(context).inflate(R.layout.each_vedio, parent, false);
+        return new VedioAdapterViewholder(v);
     }
 
     @Override
@@ -45,6 +50,7 @@ public class VedioAdapter extends RecyclerView.Adapter<VedioAdapterViewholder>{
         return vedioList.size();
     }
 }
+
 class VedioAdapterViewholder extends RecyclerView.ViewHolder {
     TextView desc;
     TextView title;
@@ -52,15 +58,17 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
     ProgressBar pbar;
     ImageButton fav;
     boolean isfav = false;
+
     public VedioAdapterViewholder(@NonNull View view) {
         super(view);
-        videoView = (VideoView) view.findViewById(R.id.vedioview);
+        videoView = (VideoView) view.findViewById(R.id.vedioviewforyou);
         title = (TextView) view.findViewById(R.id.vediotitle);
         desc = (TextView) view.findViewById(R.id.vediodesc);
         pbar = (ProgressBar) view.findViewById(R.id.videoProgressBar);
         fav = (ImageButton) view.findViewById(R.id.btn_like);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void setVideoData(Vedio vedio) {
         title.setText(vedio.getTitle());
         desc.setText(vedio.getDesc());
@@ -72,7 +80,7 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
                 pbar.setVisibility(View.GONE);
                 mp.start();
                 float videoRatio = mp.getVideoWidth() / (float) mp.getVideoHeight();
-                float screenRatio = videoView.getWidth()/ (float) videoView.getHeight();
+                float screenRatio = videoView.getWidth() / (float) videoView.getHeight();
                 float scale = videoRatio / screenRatio;
 
                 if (scale >= 1f) {
@@ -94,6 +102,42 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
                 });
             }
         });
+        videoView.setOnTouchListener(new View.OnTouchListener() {
+            GestureDetector gestureDetector = new GestureDetector(videoView.getContext(),new GestureDetector.SimpleOnGestureListener(){
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    videoView.stopPlayback();
+                    super.onLongPress(e);
+                }
+            });
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                gestureDetector.onTouchEvent(motionEvent);
+                return false;
+            }
+        });
+        videoView.setOnClickListener(new View.OnClickListener() {
+            int i = 0;
+
+            @Override
+            public void onClick(View view) {
+                i++;
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (i == 1) {
+                            videoView.resume();
+                        } else if (i == 2) {
+                            fav.setImageResource(R.drawable.ic_baseline_favorite_24);
+                            isfav = true;
+                        }
+                        i = 0;
+
+                    }
+                }, 0);
+            }
+        });
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,5 +150,6 @@ class VedioAdapterViewholder extends RecyclerView.ViewHolder {
                 }
             }
         });
+
     }
 }

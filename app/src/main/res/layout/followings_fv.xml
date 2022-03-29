@@ -7,8 +7,8 @@
     android:alpha="1">
 
     <VideoView
-        android:id="@+id/vedioviewforyou"
-        android:layout_width="match_parent"
+        android:id="@+id/vedioviewf"
+        android:layout_width="410dp"
         android:layout_height="match_parent"
         android:backgroundTint="#1B1919"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,10 +16,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/vediotitle"
+        android:id="@+id/vediotitlef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="username"
@@ -35,7 +35,7 @@
 
 
     <TextView
-        android:id="@+id/music"
+        android:id="@+id/musicf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="music_name"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.896" />
 
     <ProgressBar
-        android:id="@+id/videoProgressBar"
+        android:id="@+id/videoProgressBarf"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.434" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButtonf"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/round_img"
@@ -76,7 +76,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btn_like"
+        android:id="@+id/btn_likef"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -90,7 +90,7 @@
         app:srcCompat="@drawable/icon_like_home" />
 
     <ImageButton
-        android:id="@+id/btn_share"
+        android:id="@+id/btn_sharef"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -104,7 +104,7 @@
         app:srcCompat="@drawable/icon_share" />
 
     <ImageButton
-        android:id="@+id/btn_comment"
+        android:id="@+id/btn_commentf"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -118,7 +118,7 @@
         app:srcCompat="@drawable/icon_comment" />
 
     <ImageButton
-        android:id="@+id/btn_music"
+        android:id="@+id/btn_musicf"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
@@ -132,7 +132,7 @@
         app:srcCompat="@drawable/icon_music" />
 
     <TextView
-        android:id="@+id/txt_like"
+        android:id="@+id/txt_likef"
         android:layout_width="28dp"
         android:layout_height="16dp"
         android:text="2.1M"
@@ -147,7 +147,7 @@
         app:layout_constraintVertical_bias="0.56" />
 
     <TextView
-        android:id="@+id/txt_comment"
+        android:id="@+id/txt_commentf"
         android:layout_width="28dp"
         android:layout_height="16dp"
         android:text="350"
@@ -162,7 +162,7 @@
         app:layout_constraintVertical_bias="0.66999996" />
 
     <TextView
-        android:id="@+id/txt_share"
+        android:id="@+id/txt_sharef"
         android:layout_width="32dp"
         android:layout_height="16dp"
         android:text="12,1K"
@@ -177,7 +177,7 @@
         app:layout_constraintVertical_bias="0.77" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/follow_Button"
+        android:id="@+id/follow_Buttonf"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/round_img"
@@ -191,7 +191,7 @@
         app:layout_constraintVertical_bias="0.44" />
 
     <TextView
-        android:id="@+id/vediodesc"
+        android:id="@+id/vediodescf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="video_title"
@@ -205,7 +205,7 @@
         app:layout_constraintVertical_bias="0.847" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView2f"
         android:layout_width="20dp"
         android:layout_height="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

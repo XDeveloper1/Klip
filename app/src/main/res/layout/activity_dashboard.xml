@@ -6,26 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".home.dashboard">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="253dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="16dp">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewpager2"
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/for_you_tablayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FOR_YOU" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/following_tablayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FOLLOWING" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagerdashboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
+        android:layout_height="match_parent" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_alignParentBottom="true"
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_menu" />
 </RelativeLayout>
